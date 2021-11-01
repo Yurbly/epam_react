@@ -1,0 +1,19 @@
+.sidebar {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    flex: 1;
+    box-shadow: 10px 10px 10px black;
+}
+
+.sidebar-item {
+    padding: 2rem;
+    cursor: pointer;
+}
+
+.active {
+    color: #F65261;
+}

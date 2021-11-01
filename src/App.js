@@ -1,25 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState} from "react";
+import Header from "./components/header/Header";
+import Sidebar from "./components/sidebar/Sidebar";
+import Main from "./components/mainContent/Main";
+import sidebarItems from "./consts/sidebarItems";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+
+    const [currentScreen, setCurrentScreen] = useState(sidebarItems.counter)
+
+    return (<div className="App">
+        {Header}
+        <div className="main-section">
+            <Sidebar currentScreen={currentScreen} setCurrentScreen={setCurrentScreen}/>
+            <Main currentScreen={currentScreen}/>
+        </div>
+    </div>)
+};
 
 export default App;
